@@ -1,4 +1,3 @@
-import libraries
 import os
 import csv
 
@@ -33,6 +32,8 @@ with open(csvpath) as csvfile:
 
  #find header line and skip it
     csv_header =  next(csvfile)
+    
+   
 
  #Start pulling data from CSV file to manipulate it into the required categories
     for row in csv_reader:
@@ -46,7 +47,6 @@ with open(csvpath) as csvfile:
         changes.append(change)
 
         #Calculate the total months & total
-
         number_months = number_months + 1
         total_months = total_months + int(row[1])
 
@@ -70,10 +70,7 @@ for changing_month in range (number_months - 1):
         greatest_decrease = greatest_decrease
 
      # before printing format the calculated values after loop
-    #average_change_profit_loss = "${:,.2f}".format(average_change/total_months)
-    #total_profit_loss = "${:,.2f}".format(total_profit_loss)
-    #greatest_increase = "${:,.2f}".format(greatest_increase)
-    #greatest_decrease = "${:,.2f}".format(greatest_decrease)
+    
     average_change = changing_sum / int(number_months)
     
     # Print Out the results of data pulled to terminal
